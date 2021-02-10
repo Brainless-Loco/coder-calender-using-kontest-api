@@ -17,11 +17,12 @@ getImage = origin => {
     if (origin == "CS Academy") return "cs_academy";
     if (origin == "HackerEarth") return "hacker_earth";
     if (origin == "LeetCode") return "leet_code";
+    else return "codeforces";
 
 }
 durationInBrief = duration => {
     let hour = parseInt(duration / 3600);
-    let min = parseInt(duration%3600);
+    let min = parseInt((duration-(hour*3600))/60);
     return `${hour} Hours ${min} Minutes`;
 }
 
@@ -59,7 +60,7 @@ writeResult = origin => {
                         <div class="col-9 px-1 text-white">
                             <h5 class="py-0 mb-0 h6"><a href="${linkOfContest}" class="text-white">${nameOfContest}</a></h5>
                             <p class="pb-0 mb-0"><small>Duration: ${durationInBrief(duration)}</small></p>
-                            <p class="pt-0 mb-0 mt-0"><small>End: ${endDate} ${months[endMonth]},${endYear} ${endHour}</small></p>
+                            <p class="pt-0 mb-0 mt-0"><small>End: ${endDate} ${months[endMonth]},${endYear} ${endHour} (UTC)</small></p>
                         </div>
                     </div>
                     `;
@@ -73,8 +74,8 @@ writeResult = origin => {
                         <div class="col-9 px-1 text-white">
                             <h5 class="py-0 mb-0 h6"><a href="${linkOfContest}" class="text-white">${nameOfContest}</a></h5>
                             <p class="pb-0 mb-0"><small>Duration: ${durationInBrief(duration)}</small></p>
-                            <p class="pt-0 mb-0 mt-0"><small>Start: ${startDate} ${months[startMonth]},${startYear} ${startHour}</small></p>
-                            <p class="pt-0 mb-0 mt-0"><small>End: ${endDate} ${months[endMonth]},${endYear} ${endHour}</small></p>
+                            <p class="pt-0 mb-0 mt-0"><small>Start: ${startDate} ${months[startMonth]},${startYear} ${startHour} (UTC)</small></p>
+                            <p class="pt-0 mb-0 mt-0"><small>End: ${endDate} ${months[endMonth]},${endYear} ${endHour} (UTC)</small></p>
                         </div>
                     </div>
                     `;

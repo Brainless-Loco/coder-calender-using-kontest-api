@@ -6,17 +6,29 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-a:hover{
-    text-decoration: none;
-}
-ul{
-    list-style: none;
-}
 html{
     scroll-behavior: smooth;
 }
 body{
     background-color: #2c2c54;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+a:hover{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
 }
 .sidebar{
     position: relative;
